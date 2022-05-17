@@ -1,8 +1,8 @@
 import React from 'react'
-import Card from '../Card/Card'
+import { Card } from '../Card/Card'
 import styles from './Herosection.module.css'
 
-export default function Herosection({ weathers }) {
+export function Herosection({ weathers }) {
 
   return (
     <div className={styles.container}>
@@ -15,7 +15,6 @@ export default function Herosection({ weathers }) {
             </div>
             <div className={styles.modernise}>
                 <p className={styles.firstp}>Modernise<br />with the <span className={styles.cloudspan}>Cloud</span><br />that comes to you</p>
-                {/* <img /> */}
                 <p className={styles.secondp}>We’re helping to spread happiness with our ‘drink happy, spread happy’ smoothies…read about how ethically sourcing moringa has had a positive impact on farmers and communities.</p>
             </div>
             <div className={styles.search}>

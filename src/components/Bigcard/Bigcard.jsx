@@ -1,14 +1,13 @@
 import React from 'react'
-import styles from './Bigcard.module.css'
+import styles from './BigCard.module.css'
 import clsx from 'clsx';
 import '../../App.css';
 
-export default function Bigcard({ weather }) {
-
-    var today = new Date()
+export function BigCard({ weather }) {
+    const today = new Date()
     const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-    let day = weekday[today.getDay()];
-    let time = day+", "+((today.getHours().toString().length) < 2 ? "0"+today.getHours() : today.getHours()) + ':' + ((today.getMinutes().toString().length) < 2 ? "0"+today.getMinutes() : today.getMinutes());
+    const day = weekday[today.getDay()];
+    const time = day+", "+((today.getHours().toString().length) < 2 ? "0"+today.getHours() : today.getHours()) + ':' + ((today.getMinutes().toString().length) < 2 ? "0"+today.getMinutes() : today.getMinutes());
  
     let design = {
         background:'',

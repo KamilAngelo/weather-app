@@ -1,6 +1,6 @@
-import Menu from './components/Menu/Menu'
-import Herosection from './components/Herosection/Herosection'
-import Cards from './components/Cards/Cards'
+import { Menu } from './components/Menu/Menu'
+import { Herosection } from './components/Herosection/Herosection'
+import { BigCards } from './components/BigCards/BigCards'
 import './App.css';
 import {useEffect, useState} from "react";
 
@@ -20,20 +20,19 @@ function App() {
     }
     fetchWeathers()
     }, []);
-    console.log(weathers)
 
   if(!weathers){
     return (
       <h3>Loading...</h3>
     );
   }
-    return (
-      <div className="container">
-        <Menu />
-        <Herosection  weathers={weathers}/>
-        <Cards weathers={weathers}/> 
-      </div>
-    )
+  return (
+    <div className="container">
+      <Menu />
+      <Herosection  weathers={weathers}/>
+      <BigCards weathers={weathers}/> 
+    </div>
+  )
   
 }
 

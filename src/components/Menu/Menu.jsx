@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './Menu.module.css'
 
-export default function Menu() {
+export function Menu() {
   return (
     <div className={styles.container}>
         <img src='/Logo.svg' alt="logo" className={styles.logo} />
