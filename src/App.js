@@ -11,8 +11,8 @@ function App() {
 
   const cities = ["Cekcyn", "Moscow", "Bratysława", "Mrocza"]
   useEffect(() => {
-    const fetchWeathers = async () => {
-      await Promise.all([fetch(`https://goweather.herokuapp.com/weather/${cities[0]}`), fetch(`https://goweather.herokuapp.com/weather/${cities[1]}`), fetch(`https://goweather.herokuapp.com/weather/${cities[2]}`), fetch(`https://goweather.herokuapp.com/weather/${cities[3]}`)])
+    const fetchWeathers = () => {
+      Promise.all([fetch(`https://goweather.herokuapp.com/weather/${cities[0]}`), fetch(`https://goweather.herokuapp.com/weather/${cities[1]}`), fetch(`https://goweather.herokuapp.com/weather/${cities[2]}`), fetch(`https://goweather.herokuapp.com/weather/${cities[3]}`)])
         .then(res => Promise.all(res.map(r => r.json())))
           .then( ([city1, city2, city3, city4]) => {
           setWeathers([{...city1, city: `${cities[0]}`}, {...city2, city: `${cities[1]}`}, {...city3, city: `${cities[2]}`}, {...city4, city: `${cities[3]}`}, {...city1, city: `${cities[0]}`}, {...city2, city: `${cities[1]}`}, {...city3, city: `${cities[2]}`}])
@@ -22,20 +22,19 @@ function App() {
     }, []);
     console.log(weathers)
 
-  if(weathers!=null){
+  if(!weathers){
+    return (
+      <h3>Loading...</h3>
+    );
+  }
     return (
       <div className="container">
         <Menu />
         <Herosection  weathers={weathers}/>
         <Cards weathers={weathers}/> 
-
       </div>
-    );
-  } else {
-    return (
-      <h1>Czekaj kurwa ten</h1>
     )
-  }
+  
 }
 
 export default App;
