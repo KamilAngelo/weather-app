@@ -2,48 +2,61 @@ import React from 'react'
 import styles from './Card.module.css'
 import clsx from 'clsx';
 import '../../App.css';
+import dayjs from 'dayjs'
 
 export function Card({ weather }) {
-    const today = new Date()
-    const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-    const day = weekday[today.getDay()];
-    const time = day+", "+((today.getHours().toString().length) < 2 ? "0"+today.getHours() : today.getHours()) + ':' + ((today.getMinutes().toString().length) < 2 ? "0"+today.getMinutes() : today.getMinutes());
- 
-    let design = {
-        background:'',
-        image:''
+    const getDate = (day) => {
+        return `${day.format('dddd')}, ${day.format('H')}:${day.format('mm')}`
     }
-    switch (weather.description) {
-        case 'Patchy rain possible':
-            design.background = 'background1'
-            design.image = 'Sun cloud little rain.svg'
-            break
-        case 'Sunny':
-            design.background = 'background2'
-            design.image = 'bolt-isolated 2.svg'
-            break
-        case 'Partly cloudy':
-            design.background = 'background3'
-            design.image = 'Moon cloud fast wind.svg'
-            break
-        case 'Snowing':
-            design.background = 'background4'
-            design.image = 'Big snow.svg'
-            break
-        case 'Raining':
-            design.background = 'background5'
-            design.image = 'Big rain drops.svg'
-            break
-        default:
-            design.background = 'background6'
-            design.image = 'Cloud 3 zap.svg'
+    const time = getDate(dayjs())
+  
+    const getDesigns = (desc, small=true) => {
+        switch (desc) {
+            case 'Patchy rain possible':
+                return {
+                    background: 'background1',
+                    image: 'Sun cloud little rain.svg',
+                    small: small
+                }
+            case 'Sunny':
+                return {
+                    background: 'background2',
+                    image: 'bolt-isolated 2.svg',
+                    small: small
+                }
+            case 'Partly cloudy':
+                return {
+                    background: 'background3',
+                    image: 'Moon cloud fast wind.svg',
+                    small: small
+                }
+            case 'Snowing':
+                return {
+                    background: 'background4',
+                    image: 'Big snow.svg',
+                    small: small
+                }
+            case 'Raining':
+                return {
+                    background: 'background5',
+                    image: 'Big rain drops.svg',
+                    small: small
+                }
+            default:
+                return {
+                    background: 'background6',
+                    image: 'Cloud 3 zap.svg',
+                    small: small
+                }
 
+        }
     }
+    const design = getDesigns(weather.description)
     
     return (
     <div className={styles.container}>
         <img className={styles.img} src={`/icons/`+design.image} alt="big snow" />
-        <div className={clsx(styles.background, `${design.background}` )}>
+        <div className={clsx(styles.background, `${design.background}`)}>
             <p className={clsx(styles.p, styles.pcity)}>{weather.city}</p>
             <p className={clsx(styles.p, styles.pweather)}>{time}</p>
             <p className={clsx(styles.p, styles.pweather)}>{weather.description}</p>

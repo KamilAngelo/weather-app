@@ -19,7 +19,7 @@ function App() {
         })
     }
     fetchWeathers()
-    }, []);
+    }, [cities]);
 
   if(!weathers){
     return (
