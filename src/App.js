@@ -9,7 +9,7 @@ function App() {
   
   let [weathers, setWeathers] = useState(null);
 
-  const cities = ["Cekcyn", "Moscow", "Bratysława", "Mrocza"]
+  const cities = ["Cekcyn", "Nicosia", "Bratysława", "Barcelona"]
   useEffect(() => {
     const fetchWeathers = () => {
       Promise.all([fetch(`https://goweather.herokuapp.com/weather/${cities[0]}`), fetch(`https://goweather.herokuapp.com/weather/${cities[1]}`), fetch(`https://goweather.herokuapp.com/weather/${cities[2]}`), fetch(`https://goweather.herokuapp.com/weather/${cities[3]}`)])

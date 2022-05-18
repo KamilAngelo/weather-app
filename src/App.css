@@ -1,29 +1,29 @@
 .container {
-    padding: 0 140px;
+    align-items: center;
     display: flex;
     flex-direction: column;
     gap: 48px;
-    width: 1160px;
-
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .background1 {
-    background-image: linear-gradient(to right bottom, #FF5F6D , #FFC371);
+    background-image: url('/public/icons/Rectangle.svg'), linear-gradient(to right bottom, #FF5F6D , #FFC371);
 }
 .background2 {
-    background-image: linear-gradient(to right bottom, #FA8607 , #FECC51);
+    background-image: url('/public/icons/Rectangle.svg'), linear-gradient(to right bottom, #FA8607 , #FECC51);
 }
 .background3 {
-    background-image: linear-gradient(to right bottom, #22C1C3 , #FDBB2D);
+    background-image: url('/public/icons/Rectangle.svg'), linear-gradient(to right bottom, #22C1C3 , #FDBB2D);
 }
 .background4 {
-    background-image: linear-gradient(to right bottom, #6190E8 , #A7BFE8);
+    background-image: url('/public/icons/Rectangle.svg'), linear-gradient(to right bottom, #6190E8 , #A7BFE8);
 }
 .background5 {
-    background-image: linear-gradient(to right bottom, #4B79A1 , #283E51);
+    background-image: url('/public/icons/Rectangle.svg'), linear-gradient(to right bottom, #4B79A1 , #283E51);
 }
 .background6 {
-    background-image: linear-gradient(to right bottom, #092E5A , #E87A90);
+    background-image: url('/public/icons/Rectangle.svg'), linear-gradient(to right bottom, #092E5A , #E87A90);
 }
 /* .background7 {
     background-image: linear-gradient(to right bottom, #FF5F6D , #FFC371);

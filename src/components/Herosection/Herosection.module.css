@@ -98,7 +98,7 @@
     height: 636px;
     right: 0px;
     top: 0px;
-    background: linear-gradient(235.19deg, rgba(255, 95, 109, 0.6) 5.21%, rgba(255, 195, 113, 0) 96.61%);
+    background-image: url(/public/icons/Rectangle.svg), linear-gradient(235.19deg, rgba(255, 95, 109, 0.6) 5.21%, rgba(255, 195, 113, 0) 96.61%);
     border-radius: 24px;
     z-index: 0;
 }
@@ -107,9 +107,8 @@
     position: relative;
     width: 608px;
     height: 636px;
-    left: -61px;
+    right: 100px;
     top: -5px;
-
     border: 4px dashed #FFFFFF;
 }
 
