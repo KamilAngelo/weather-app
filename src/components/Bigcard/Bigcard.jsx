@@ -9,6 +9,7 @@ export function BigCard({ weather }) {
     const day = weekday[today.getDay()];
     const time = day+", "+((today.getHours().toString().length) < 2 ? "0"+today.getHours() : today.getHours()) + ':' + ((today.getMinutes().toString().length) < 2 ? "0"+today.getMinutes() : today.getMinutes());
  
+    
     let design = {
         background:'',
         image:''
